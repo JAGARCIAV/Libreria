@@ -17,26 +17,22 @@ body {
 }
 
 /* Estilo para imágenes de productos y categorías */
-/* Estilo para imágenes de productos y categorías */
-/* Estilo para imágenes de productos y categorías */
 .product-image, .category-image {
-  width: 100%;           /* Ajusta el ancho al 100% del contenedor */
-  height: 300px;         /* Define una altura fija */
-  object-fit: cover;     /* Mantiene el aspecto de la imagen y recorta si es necesario */
-  border-radius: 5px;    /* Bordes redondeados para darle un estilo moderno */
-  overflow: hidden;      /* Oculta cualquier parte de la imagen que sobresalga */
+  width: 100%;              /* Ajusta el ancho al 100% del contenedor */
+  height: 250px;            /* Ajuste la altura a 250px */
+  object-fit: cover;        /* Mantiene el aspecto de la imagen y recorta si es necesario */
+  border-radius: 5px;       /* Bordes redondeados para darle un estilo moderno */
+  overflow: hidden;         /* Oculta cualquier parte de la imagen que sobresalga */
 }
 
 /* Contenedor para asegurarte que el overflow funcione */
 .image-container {
-  width: 100%;           /* Ajusta el ancho al 100% del contenedor */
-  max-width: 300px;     /* Tamaño máximo del ancho para controlarlo */
-  height: 300px;        /* Mantiene la altura constante */
-  overflow: hidden;      /* Oculta cualquier parte que sobresalga */
-  position: relative;    /* Para que el objeto hijo se ajuste correctamente */
+  width: 100%;              /* Ajusta el ancho al 100% del contenedor */
+  max-width: 300px;         /* Tamaño máximo del ancho para controlarlo */
+  height: 250px;            /* Mantiene la altura constante */
+  overflow: hidden;         /* Oculta cualquier parte que sobresalga */
+  position: relative;       /* Para que el objeto hijo se ajuste correctamente */
 }
-
-
 
 /* Navbar con fondo gradiente y efecto de scroll */
 .navbar {
@@ -90,8 +86,8 @@ body {
   background-color: #FF6F61;
   color: #FFFFFF;
   border: none;
-  padding: 10px 20px;
-  font-size: 1.2rem;
+  padding: 8px 15px;      /* Reducido el padding */
+  font-size: 1rem;        /* Ajuste del tamaño de fuente */
   border-radius: 5px;
   transition: background-color 0.3s ease, transform 0.3s ease;
   text-transform: uppercase;
@@ -105,24 +101,24 @@ body {
 
 /* Ajustes para los botones grandes */
 .btn-lg {
-  padding: 15px 30px;
-  font-size: 1.5rem;
+  padding: 12px 25px;     /* Reducido el padding */
+  font-size: 1.2rem;      /* Ajuste del tamaño de fuente */
 }
 
 /* Estilo para el enlace activo */
 .nav-link.active {
   background-color: #FF6F61; /* Cambia el color de fondo para destacar */
   color: #FFFFFF !important; /* Cambia el color del texto */
-  font-weight: bold; /* Hacer el texto más grueso */
-  border-radius: 5px; /* Bordes redondeados */
+  font-weight: bold;         /* Hacer el texto más grueso */
+  border-radius: 5px;        /* Bordes redondeados */
 }
 
 .product-link.active, .category-link.active {
   background-color: #FF6F61; /* Cambia el color del fondo cuando esté activo */
-  color: #FFFFFF; /* Cambia el color del texto */
-  font-weight: bold; /* Texto en negrita */
+  color: #FFFFFF;            /* Cambia el color del texto */
+  font-weight: bold;          /* Texto en negrita */
   padding: 5px;
-  border-radius: 5px; /* Bordes redondeados */
+  border-radius: 5px;        /* Bordes redondeados */
 }
 
 /* Estilos para la tarjeta */
@@ -135,29 +131,103 @@ body {
 
 /* Contenedor de botones */
 .btn-container {
-  margin-top: auto;                  /* Empuja el contenedor de botones al final */
-  display: flex;                     /* Flex para alinear botones */
-  justify-content: center;            /* Centra los botones */
-  gap: 10px;                         /* Espacio entre los botones */
+  margin-top: 10px;          /* Añadir un poco de espacio superior */
+  display: flex;             /* Flex para alinear botones */
+  justify-content: center;   /* Centra los botones */
+  gap: 5px;                  /* Reducido el espacio entre los botones */
 }
 
-/* Botones principales en naranja con texto blanco */
-.btn, .btn-primary {
-  background-color: #FF6F61;
-  color: #FFFFFF;
-  border: none;
-  padding: 10px 20px;
-  font-size: 1.2rem;
-  border-radius: 5px;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+/* Estilos del carrusel */
+.carousel-inner {
+  display: flex;
+  align-items: center;
+  overflow: visible; /* Permitir que los elementos laterales se muestren parcialmente */
 }
 
-.btn:hover, .btn-primary:hover {
-  background-color: #E65A50;
-  transform: scale(1.05);
+.category-card {
+  width: 100%;               /* Ajustar el ancho al 100% del contenedor */
+  max-width: 300px;          /* Limitar el ancho máximo a 300px */
+  height: auto;              /* Ajustar la altura automáticamente */
+  margin: 0 auto;            /* Centrar la tarjeta */
+  transition: transform 0.5s ease;
+}
+
+.category-card.active {
+  width: 100%;               /* Mantener el ancho al 100% cuando sea activo */
+  max-width: 350px;          /* Incrementar ligeramente el tamaño en activo */
+  transform: scale(1.1);     /* Ligeramente aumentar el tamaño en activo */
+}
+
+.carousel-item-next .category-card,
+.carousel-item-prev .category-card {
+  transform: scale(0.9);     /* Reducir ligeramente el tamaño de las tarjetas laterales */
+}
+
+/* Botones del carrusel */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: black;
+  border-radius: 50%;
+  padding: 5px;              /* Reducir el tamaño del padding */
+  width: 30px;               /* Reducir el tamaño de los íconos */
+  height: 30px;
 }
 
 
+/* Estilo para las imágenes del producto */
+.product-image {
+  width: 100%;              /* Ajuste de ancho al 100% */
+  height: 200px;            /* Altura fija */
+  object-fit: cover;        /* Recorte de la imagen manteniendo su proporción */
+  border-radius: 5px;       /* Bordes redondeados */
+}
 
+/* Ajustes de las tarjetas */
+.card {
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);    /* Aumentar ligeramente el tamaño en hover */
+}
+
+/* Contenedor de botones */
+.btn-container {
+  display: flex;
+  justify-content: center;   /* Centrar los botones */
+  gap: 10px;                 /* Espaciado entre botones */
+}
+
+.btn-sm {
+  padding: 5px 10px;         /* Ajuste de padding para botones más pequeños */
+  font-size: 0.9rem;         /* Tamaño de fuente más pequeño */
+}
+
+/* Ajustes de la cuadrícula para distintas pantallas */
+@media (max-width: 1200px) {
+  .col-lg-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+}
+
+@media (max-width: 992px) {
+  .col-md-4 {
+    flex: 0 0 33.3333%;
+    max-width: 33.3333%;
+  }
+}
+
+@media (max-width: 768px) {
+  .col-sm-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 576px) {
+  .col-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}

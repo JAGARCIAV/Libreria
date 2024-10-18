@@ -2,7 +2,7 @@
   <h1 class="text-center text-uppercase text-light mb-4">Lista de Productos</h1>
   <div class="row">
     {{#each productos}}
-      <div class="col-md-3 p-2">
+      <div class="col-lg-3 col-md-4 col-sm-6 col-12 p-2"> <!-- Ajuste de columnas para distintos tamaños de pantalla -->
         <div class="card text-center bg-dark text-light h-100">
           <div class="card-body">
             <a href="{{url_imagen}}" target="_blank" class="text-light">
@@ -12,10 +12,10 @@
             <p class="m-2">{{descripcion}}</p>
             <p class="text-muted">Precio: ${{precio}} | Cantidad: {{cantidad}}</p>
             <p class="text-muted">{{timeago created_at}}</p>
-            
-            <div class="btn-container"> <!-- Contenedor de botones -->
-              <a class="btn btn-danger" href="/productos/delete/{{id}}">Eliminar</a>
-              <a href="/productos/edit/{{id}}" class="btn btn-warning">Editar</a>
+
+            <div class="btn-container">
+              <a class="btn btn-danger btn-sm" href="/productos/delete/{{id}}">Eliminar</a>
+              <a href="/productos/edit/{{id}}" class="btn btn-warning btn-sm">Editar</a>
             </div>
           </div>
         </div>

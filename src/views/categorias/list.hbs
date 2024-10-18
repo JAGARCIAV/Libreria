@@ -1,25 +1,34 @@
 <div class="container p-4">
   <h1 class="text-center text-uppercase text-light mb-4">Lista de Categorías</h1>
-  <div class="row">
-    {{#each categorias}}
-      <div class="col-md-3 p-2">
-        <div class="card text-center bg-dark text-light h-100">
+  <div id="categoryCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      {{#each categorias}}
+      <div class="carousel-item {{#if @first}}active{{/if}}">
+        <div class="category-card card text-center bg-dark text-light mx-auto" style="max-width: 300px;">
           <div class="card-body">
-            <div class="image-container">  <!-- Contenedor para la imagen -->
+            <div class="image-container">
               <img src="{{url_imagen}}" alt="{{nombre}}" class="product-image card-img-top" />
             </div>
             <h3 class="card-title text-uppercase">{{nombre}}</h3>
             <p class="card-text">{{descripcion}}</p>
-            
-            <div class="btn-container"> <!-- Contenedor de botones -->
+            <div class="btn-container">
               <a href="/categorias/edit/{{id}}" class="btn btn-warning">Editar</a>
               <a href="/categorias/delete/{{id}}" class="btn btn-danger">Eliminar</a>
             </div>
           </div>
         </div>
       </div>
-    {{/each}}
+      {{/each}}
+    </div>
+
+    <!-- Controles del carrusel -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#categoryCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#categoryCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
 </div>
-
-
