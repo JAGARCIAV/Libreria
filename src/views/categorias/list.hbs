@@ -1,0 +1,25 @@
+<div class="container p-4">
+  <h1 class="text-center text-uppercase text-light mb-4">Lista de Categorías</h1>
+  <div class="row">
+    {{#each categorias}}
+      <div class="col-md-3 p-2">
+        <div class="card text-center bg-dark text-light h-100">
+          <div class="card-body">
+            <div class="image-container">  <!-- Contenedor para la imagen -->
+              <img src="{{url_imagen}}" alt="{{nombre}}" class="product-image card-img-top" />
+            </div>
+            <h3 class="card-title text-uppercase">{{nombre}}</h3>
+            <p class="card-text">{{descripcion}}</p>
+            
+            <div class="btn-container"> <!-- Contenedor de botones -->
+              <a href="/categorias/edit/{{id}}" class="btn btn-warning">Editar</a>
+              <a href="/categorias/delete/{{id}}" class="btn btn-danger">Eliminar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</div>
+
+

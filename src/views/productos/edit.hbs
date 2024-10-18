@@ -1,0 +1,78 @@
+<div class="container p-4">
+  <div class="row">
+    <div class="col-md-4 mx-auto">
+      <div class="card bg-dark border border-dark">
+        <div class="card-body">
+          <form action="/productos/edit/{{producto.id}}" method="POST">
+            <div class="form-group">
+              <input
+                type="text"
+                name="nombre"
+                class="form-control bg-dark text-light"
+                placeholder="Nombre del Producto"
+                value="{{producto.nombre}}"
+                autofocus
+              />
+            </div>
+            <div class="form-group">
+              <textarea
+                name="descripcion"
+                rows="2"
+                class="form-control bg-dark text-light"
+                placeholder="Descripción"
+              >{{producto.descripcion}}</textarea>
+            </div>
+            <div class="form-group">
+              <input
+                type="number"
+                step="0.01"
+                name="precio"
+                class="form-control bg-dark text-light"
+                placeholder="Precio"
+                value="{{producto.precio}}"
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="number"
+                name="cantidad"
+                class="form-control bg-dark text-light"
+                placeholder="Cantidad"
+                value="{{producto.cantidad}}"
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="url"
+                name="url_imagen"
+                class="form-control bg-dark text-light"
+                placeholder="URL de la Imagen"
+                value="{{producto.url_imagen}}"
+              />
+            </div>
+
+            <!-- Selección de Categoría (categoria_id) -->
+            <div class="form-group">
+              <label for="categoria_id" class="text-light">Categoría:</label>
+              <select name="categoria_id" class="form-control bg-dark text-light" required>
+                <option value="" disabled>Seleccione una categoría</option>
+                {{#each categorias}}
+                  <option value="{{this.id}}" 
+                          {{#if (eq this.id ../producto.categoria_id)}}selected{{/if}}>
+                    {{this.nombre}}
+                  </option>
+                {{/each}}
+              </select>
+            </div>
+
+            <div class="form-group">
+              <button class="btn btn-success btn-block">
+                Guardar
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

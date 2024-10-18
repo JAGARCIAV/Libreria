@@ -1,0 +1,32 @@
+<div class="container p-4">
+  <h1 class="text-center text-uppercase text-light mb-4">Lista de Productos</h1>
+  <div class="row">
+    {{#each productos}}
+      <div class="col-md-3 p-2">
+        <div class="card text-center bg-dark text-light h-100">
+          <div class="card-body">
+            <a href="{{url_imagen}}" target="_blank" class="text-light">
+              <img src="{{url_imagen}}" alt="{{nombre}}" class="img-fluid product-image" />
+              <h3 class="card-title text-uppercase">{{nombre}}</h3>
+            </a>
+            <p class="m-2">{{descripcion}}</p>
+            <p class="text-muted">Precio: ${{precio}} | Cantidad: {{cantidad}}</p>
+            <p class="text-muted">{{timeago created_at}}</p>
+            
+            <div class="btn-container"> <!-- Contenedor de botones -->
+              <a class="btn btn-danger" href="/productos/delete/{{id}}">Eliminar</a>
+              <a href="/productos/edit/{{id}}" class="btn btn-warning">Editar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    {{else}}
+      <div class="col-md-4 mx-auto">
+        <div class="card card-body text-center bg-dark text-light">
+          <p>No hay productos guardados aún.</p>
+          <a href="/productos/add" class="text-success">¡Crea uno!</a>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</div>

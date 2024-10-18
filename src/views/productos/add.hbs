@@ -1,0 +1,80 @@
+<div class="container p-4 h-100">
+  <div class="row h-75 d-flex align-items-center">
+    <div class="col-md-4 mx-auto">
+      <div class="card bg-dark">
+        <form action="/productos/add" method="POST" class="card-body">
+          <!-- Título y botón de guardar -->
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h1 class="text-light mb-3 h4">Crear un Nuevo Producto</h1>
+            <button class="btn btn-success" type="submit">Guardar</button>
+          </div>
+
+          <!-- Campo de Nombre del Producto -->
+          <label for="nombre" class="text-light">Nombre del Producto:</label>
+          <input
+            type="text"
+            name="nombre"
+            class="form-control bg-dark text-light mb-3"
+            placeholder="Nombre"
+            required
+          />
+
+          <!-- Campo de Descripción -->
+          <label for="descripcion" class="text-light">Descripción:</label>
+          <textarea
+            name="descripcion"
+            class="form-control bg-dark text-light mb-3"
+            placeholder="Descripción"
+            required
+          ></textarea>
+
+          <!-- Campo de Precio -->
+          <label for="precio" class="text-light">Precio:</label>
+          <input
+            type="number"
+            name="precio"
+            class="form-control bg-dark text-light mb-3"
+            placeholder="Precio"
+            step="0.01"
+            required
+          />
+
+          <!-- Campo de Cantidad -->
+          <label for="cantidad" class="text-light">Cantidad:</label>
+          <input
+            type="number"
+            name="cantidad"
+            class="form-control bg-dark text-light mb-3"
+            placeholder="Cantidad"
+            required
+          />
+
+          <!-- Campo de URL de Imagen -->
+          <label for="url_imagen" class="text-light">URL de la Imagen:</label>
+          <input
+            type="url"
+            name="url_imagen"
+            class="form-control bg-dark text-light mb-3"
+            placeholder="URL de la imagen"
+            required
+          />
+
+<!-- Selección de Categoría -->
+<label for="categoria_id" class="text-light">Categoría:</label>
+<select
+  name="categoria_id"
+  class="form-control bg-dark text-light mb-3"
+  required
+>
+  <option value="" disabled selected>Seleccione una categoría</option>
+  {{#each categorias}}
+    <option value="{{this.id}}">{{this.nombre}}</option>
+  {{/each}}
+</select>
+
+          </select>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

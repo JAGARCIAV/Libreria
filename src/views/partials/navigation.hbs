@@ -1,0 +1,87 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <i class="fas fa-link"></i>
+      Libreria
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        {{#if user}}
+          <!-- Productos Dropdown -->
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle {{#if (eq currentRoute 'productos')}}active{{/if}}"
+              href="#"
+              id="navbarDropdownProductos"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Productos
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownProductos">
+              <a class="dropdown-item" href="/productos">Productos</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="/productos/add">Añadir Productos</a>
+            </div>
+          </li>
+
+          <!-- Categories Dropdown -->
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle {{#if (eq currentRoute 'categorias')}}active{{/if}}"
+              href="#"
+              id="navbarDropdownCategories"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Categorias
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownCategories">
+              <a class="dropdown-item" href="/categorias">Categorias</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="/categorias/add">Añadir Categorias</a>
+            </div>
+          </li>
+
+          <!-- User Dropdown -->
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle {{#if (eq currentRoute 'profile')}}active{{/if}}"
+              href="#"
+              id="navbarDropdownUser"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              {{user.fullname}}
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownUser">
+              <li><a class="dropdown-item" href="/profile">Perfil</a></li>
+              <li><a class="dropdown-item" href="/logout">Salir</a></li>
+            </ul>
+          </li>
+        {{else}}
+          <li class="nav-item">
+            <a class="nav-link {{#if (eq currentRoute 'signin')}}active{{/if}}" href="/signin">Ingresar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {{#if (eq currentRoute 'signup')}}active{{/if}}" href="/signup">Registrarse</a>
+          </li>
+        {{/if}}
+      </ul>
+    </div>
+  </div>
+</nav>
